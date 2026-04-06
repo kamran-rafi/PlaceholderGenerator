@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
 import * as htmlToImage from 'html-to-image';
 
+import Navigation from './components/Navigation/Navigation';
+
 import Input from './components/Input/Input';
 import Button from './components/Button/Button';
 
@@ -20,8 +22,8 @@ const Selector = props => {
 const App = () => {
   const [filename, setFilename] = useState("")
   const [filetype, setFiletype] = useState("png")
-  const [width, setWidth] = useState(null)
-  const [height, setHeight] = useState(null)
+  const [width, setWidth] = useState("")
+  const [height, setHeight] = useState("")
 
   const imageContainer = useRef()
 
@@ -53,7 +55,8 @@ const App = () => {
   };
 
   return (
-    <div>
+    <>
+      <Navigation />
       <Input hint="placeholder" value={filename} changeCallback={e => setFilename(e.target.value)} />
       <Selector value={filetype} changeCallback={e => setFiletype(e.target.value)} />
       <div>
@@ -66,7 +69,7 @@ const App = () => {
         style={{ width: "320px", height: "320px", backgroundColor: "yellow" }}
       ></div>
       <Button title="Download" clickCallback={downloadImage} />
-    </div>
+    </>
   )
 }
 
