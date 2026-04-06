@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import * as htmlToImage from 'html-to-image';
 
 import Navigation from './components/Navigation/Navigation';
+import Welcome from './components/Welcome/Welcome';
 
 import Input from './components/Input/Input';
 import Button from './components/Button/Button';
@@ -57,6 +58,7 @@ const App = () => {
   return (
     <>
       <Navigation />
+      <Welcome />
       <Input hint="placeholder" value={filename} changeCallback={e => setFilename(e.target.value)} />
       <Selector value={filetype} changeCallback={e => setFiletype(e.target.value)} />
       <div>
