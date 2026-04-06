@@ -1,4 +1,5 @@
 import Style from "./Welcome.module.css"
+import Button from "../Button/Button"
 
 const Welcome = () => {
     return (
@@ -12,9 +13,7 @@ const Welcome = () => {
                 <p>
                     Generate bold, customizable placeholder images offline. Set size, colors, text, and vibe—then download instantly.
                 </p>
-                <button>
-                    Get Started!
-                </button>
+                <Button title="Get Started!"/>
             </main>
         </section>
     )
