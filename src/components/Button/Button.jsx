@@ -1,9 +1,11 @@
+import Style from "./Button.module.css"
+
 const Button = props => {
 
     const { title, clickCallback } = props
 
     return (
-        <button onClick={clickCallback}>
+        <button id={Style.Button} onClick={clickCallback}>
             {title || "button"}
         </button>
     )

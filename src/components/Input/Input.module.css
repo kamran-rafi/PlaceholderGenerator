@@ -1,0 +1,17 @@
+#Input {
+    padding: 8px 12px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    font-size: 18px;
+    width: 100%;
+}
+
+#Input:focus {
+    outline: none;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}

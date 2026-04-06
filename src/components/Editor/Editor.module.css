@@ -1,0 +1,26 @@
+#Editor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.inputs {
+    border-right: 2px solid black;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputs > h2 {
+    font-weight: 800;
+}
+
+.fileInfo {
+    display: flex;
+    gap: 8px;
+}
+
+.preview {
+    border-left: 2px solid black;
+    padding: 24px;
+}

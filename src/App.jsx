@@ -3,6 +3,7 @@ import * as htmlToImage from 'html-to-image';
 
 import Navigation from './components/Navigation/Navigation';
 import Welcome from './components/Welcome/Welcome';
+import Editor from './components/Editor/Editor';
 
 import Input from './components/Input/Input';
 import Button from './components/Button/Button';
@@ -59,7 +60,8 @@ const App = () => {
     <>
       <Navigation />
       <Welcome />
-      <Input hint="placeholder" value={filename} changeCallback={e => setFilename(e.target.value)} />
+      <Editor />
+      {/* <Input hint="placeholder" value={filename} changeCallback={e => setFilename(e.target.value)} />
       <Selector value={filetype} changeCallback={e => setFiletype(e.target.value)} />
       <div>
         <Input hint="width 128" value={width} changeCallback={e => setWidth(e.target.value)} type="number"/> 
@@ -70,7 +72,7 @@ const App = () => {
         ref={imageContainer}
         style={{ width: "320px", height: "320px", backgroundColor: "yellow" }}
       ></div>
-      <Button title="Download" clickCallback={downloadImage} />
+      <Button title="Download" clickCallback={downloadImage} /> */}
     </>
   )
 }

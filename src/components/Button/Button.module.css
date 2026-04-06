@@ -1,0 +1,17 @@
+#Button {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    font-size: 24px;
+    font-weight: 800;
+    padding: 16px 24px;
+    background-color: #009cfc;
+}
+
+#Button:hover {
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}

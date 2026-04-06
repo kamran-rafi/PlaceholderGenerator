@@ -1,0 +1,17 @@
+#Select {
+    outline: none;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    font-size: 18px;
+    padding: 8px 12px;
+}
+
+#Select:hover {
+    outline: none;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
