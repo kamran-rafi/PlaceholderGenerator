@@ -1,11 +1,13 @@
 const Input = props => {
 
-    const { value, changeCallback } = props
+    const { hint, value, changeCallback, type} = props
 
     return (
-        <input 
+        <input
+            placeholder={hint}
             value={value}
             onChange={changeCallback}
+            type={type || "text"}
         />
     )
 }
