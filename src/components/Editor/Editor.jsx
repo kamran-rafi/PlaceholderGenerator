@@ -89,12 +89,15 @@ const Editor = () => {
                         <Input hint="height (defualt: 128px)" value={height} changeCallback={e => setHeight(e.target.value)} type="number" />
                     </div>
                     <label className={Style.label}>
-                        <input type="checkbox" checked={showDimensions} onChange={()=>setShowDimensions(!showDimensions)}/>
+                        <input type="checkbox" checked={showDimensions} onChange={() => setShowDimensions(!showDimensions)} />
                         <p>Show dimensions on image.</p>
                     </label>
                 </div>
-                <div className={Style.inputsContainer}>
-                    <Input hint="Insert one emoji" value={emoji} changeCallback={e => setEmoji(e.target.value)} max="3" />
+                <div>
+                    <p className={Style.text}>Insert an emoji or upto three letters:</p>
+                    <div className={Style.inputsContainer}>
+                        <Input hint="Insert one emoji" value={emoji} changeCallback={e => setEmoji(e.target.value)} max="3" />
+                    </div>
                 </div>
                 <Button title="Download" clickCallback={downloadImage} />
             </aside>
