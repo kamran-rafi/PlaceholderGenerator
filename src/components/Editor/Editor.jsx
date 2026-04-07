@@ -16,32 +16,52 @@ const Editor = () => {
 
     const previewRef = useRef()
 
-    const downloadImage = () => {
+    const downloadImage = async () => {
         const current = previewRef.current
 
+        const targetWidth = Number(width) || 128
+        const targetHeight = Number(height) || 128
+
+        const scale = 4 // 👈 render 4x bigger for quality
+
         let convertFn
+        if (filetype === "jpeg") convertFn = htmlToImage.toJpeg
+        else if (filetype === "svg") convertFn = htmlToImage.toSvg
+        else convertFn = htmlToImage.toPng
 
-        if (filetype === "jpeg") {
-            convertFn = htmlToImage.toJpeg
-        } else if (filetype === "svg") {
-            convertFn = htmlToImage.toSvg
-        } else {
-            convertFn = htmlToImage.toPng
-        }
+        // 🧠 Step 1: render BIG (no distortion)
+        const dataUrl = await convertFn(current, {
+            width: targetWidth * scale,
+            height: targetHeight * scale,
+            style: {
+                transform: `scale(${scale})`,
+                transformOrigin: "top left",
+                width: `${targetWidth}px`,
+                height: `${targetHeight}px`,
+            },
+            pixelRatio: 1,
+            fontEmbedCSS: false,
+        })
 
-        convertFn(current,
-            {
-                canvasWidth: width || 128,
-                canvasHeight: height || 128,
-                pixelRatio: 1,
-                fontEmbedCSS: false,
-            }
-        ).then((dataUrl) => {
+        // 🧠 Step 2: downscale to final size
+        const img = new Image()
+        img.src = dataUrl
+
+        img.onload = () => {
+            const canvas = document.createElement("canvas")
+            canvas.width = targetWidth
+            canvas.height = targetHeight
+
+            const ctx = canvas.getContext("2d")
+            ctx.drawImage(img, 0, 0, targetWidth, targetHeight)
+
+            const finalUrl = canvas.toDataURL(`image/${filetype || "png"}`)
+
             const link = document.createElement("a")
             link.download = `${filename.trim() || "placeholder"}.${filetype || "png"}`
-            link.href = dataUrl
+            link.href = finalUrl
             link.click()
-        })
+        }
     }
 
     return (
@@ -54,9 +74,9 @@ const Editor = () => {
                 </div>
                 <ColorPicker value={color} changeCallback={e => setColor(e.target.value)} changeColor={setColor} />
                 <div className={Style.inputsContainer}>
-                    <Input hint="width (defualt: 128px)" value={width} changeCallback={e => setWidth(e.target.value)} type="number"/> 
+                    <Input hint="width (defualt: 128px)" value={width} changeCallback={e => setWidth(e.target.value)} type="number" />
                     <span> - </span>
-                    <Input hint="height (defualt: 128px)" value={height} changeCallback={e => setHeight(e.target.value)} type="number"/>
+                    <Input hint="height (defualt: 128px)" value={height} changeCallback={e => setHeight(e.target.value)} type="number" />
                 </div>
                 <Button title="Download" clickCallback={downloadImage} />
             </aside>
@@ -65,6 +85,8 @@ const Editor = () => {
                 <Preview
                     reference={previewRef}
                     color={color}
+                    width={width}
+                    height={height}
                 />
             </aside>
         </section>
