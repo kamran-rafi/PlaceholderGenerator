@@ -8,6 +8,19 @@
     align-items: center;
 }
 
+.iconLink {
+    width: 32px;
+    height: 32px;
+    border: 4px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+
 .linkBtn {
     color: black;
     font-size: 18px;
@@ -28,7 +41,7 @@
 }
 
 @media only screen and (max-width: 719px) {
-    #Navigation > h1 {
+    #Navigation > div > h1 {
         display: none;
     }
 }

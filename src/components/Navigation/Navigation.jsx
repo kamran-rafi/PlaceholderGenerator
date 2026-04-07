@@ -3,7 +3,12 @@ import Style from "./Navigation.module.css"
 const Navigation = () => {
     return (
         <nav id={Style.Navigation}>
-            <h1>Placeholder Image Generator</h1>
+            <div style={{display: "flex", gap:"8px"}}>
+                <a className={Style.iconLink} href="https://kamran.app" target="_blank">
+                    K
+                </a>
+                <h1>Placeholder Image Generator</h1>
+            </div>
             <div>
                 <a className={Style.linkBtn} href="https://github.com/kamran-rafi/PlaceholderGenerator" target="_blank">
                     <p>Github</p>
