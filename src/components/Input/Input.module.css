@@ -15,3 +15,15 @@
     border-right: 2px solid black;
     border-bottom: 2px solid black;
 }
+
+/* Chrome, Safari, Edge */
+#Input[type="number"]::-webkit-outer-spin-button,
+#Input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#Input[type="number"] {
+  -moz-appearance: textfield;
+}

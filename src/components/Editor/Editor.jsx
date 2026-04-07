@@ -12,7 +12,7 @@ const Editor = () => {
     const [filetype, setFiletype] = useState("png")
     const [width, setWidth] = useState("")
     const [height, setHeight] = useState("")
-    const [color, setColor] = useState("#123456")
+    const [color, setColor] = useState("#009cfc")
 
     const previewRef = useRef()
 
@@ -53,6 +53,11 @@ const Editor = () => {
                     <DropMenu value={filetype} changeCallback={e => setFiletype(e.target.value)} />
                 </div>
                 <ColorPicker value={color} changeCallback={e => setColor(e.target.value)} changeColor={setColor} />
+                <div className={Style.inputsContainer}>
+                    <Input hint="width (defualt: 128px)" value={width} changeCallback={e => setWidth(e.target.value)} type="number"/> 
+                    <span> - </span>
+                    <Input hint="height (defualt: 128px)" value={height} changeCallback={e => setHeight(e.target.value)} type="number"/>
+                </div>
                 <Button title="Download" clickCallback={downloadImage} />
             </aside>
             <aside className={Style.preview}>
