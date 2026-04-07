@@ -28,7 +28,7 @@ const Questions = () => {
             <h1>But Why?</h1>
             <div style={{display: "flex", flexDirection: "column", gap:"32px"}}>
                 <Question q="Is this tool offline?" a="Yes. Everything runs in your browser — no uploads, no API calls, no tracking." />
-                <Question q="Why not use real images (like Picsum)?" a="Random images often clash with your UI colors and design. This tool helps you generate placeholders that match your app’s theme." />
+                <Question q="Why not use real images?" a="Random images often clash with your UI colors and design. This tool helps you generate placeholders that match your app’s theme." />
                 <Question q="Why does your UI feel off?" a="Bad placeholders ruin good design." />
             </div>
         </div>

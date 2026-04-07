@@ -54,13 +54,15 @@ const Preview = ({ reference, color, width = 128, height = 128, emoji, showDimen
         <div id={Style.Preview}>
             {/* Wrapper for visual scaling */}
             <div
+                className={Style.previewContainer}
                 style={{
                     width: `${maxPreviewSize}px`,
                     height: `${maxPreviewSize}px`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    overflow: "hidden"
+                    overflow: "hidden",
+                    backgroundColor:"yellow"
                 }}
             >
                 {/* Inner scaling layer */}

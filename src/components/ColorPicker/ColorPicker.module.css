@@ -9,7 +9,8 @@
     border-left: 2px solid black;
     border-right: 4px solid black;
     border-bottom: 4px solid black;
-    height: 100%;
+    width: 48px;
+    height: 48px;
 }
 
 .button {

@@ -12,7 +12,7 @@ const ColorPicker = props => {
 
     return (
         <div id={Style.ColorPicker}>
-            <input className={Style.colors} type="color" value={value} onChange={changeCallback} />
+            <div><input className={Style.colors} type="color" value={value} onChange={changeCallback} /></div>
             <Input value={value} changeCallback={changeCallback} />
             <button onClick={ generateRandomColor } className={Style.button}>Random</button>
         </div>
