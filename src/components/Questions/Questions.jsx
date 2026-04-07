@@ -24,7 +24,7 @@ const Question = props => {
 
 const Questions = () => {
     return (
-        <div id={Style.Questions}>
+        <div id="Questions" className={Style.Questions}>
             <h1>But Why?</h1>
             <div style={{display: "flex", flexDirection: "column", gap:"32px"}}>
                 <Question q="Is this tool offline?" a="Yes. Everything runs in your browser — no uploads, no API calls, no tracking." />

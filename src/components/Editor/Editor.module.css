@@ -1,4 +1,4 @@
-#Editor {
+.Editor {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-bottom: 4px solid black;

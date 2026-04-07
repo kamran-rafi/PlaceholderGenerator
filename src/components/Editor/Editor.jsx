@@ -67,7 +67,7 @@ const Editor = () => {
     }
 
     return (
-        <section id={Style.Editor}>
+        <section id="Editor" className={Style.Editor}>
             <aside className={Style.inputs}>
                 <h2>Customize</h2>
                 <div>
