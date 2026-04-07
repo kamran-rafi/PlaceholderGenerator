@@ -1,6 +1,6 @@
 import Style from "./Preview.module.css"
 
-const Preview = ({ reference, color, width = 128, height = 128 }) => {
+const Preview = ({ reference, color, width = 128, height = 128, emoji }) => {
     const maxPreviewSize = 320
     const scale = Math.min(maxPreviewSize / width, maxPreviewSize / height)
 
@@ -40,10 +40,8 @@ const Preview = ({ reference, color, width = 128, height = 128 }) => {
                         ref={reference}
                     >
                         <p style={{
-                            margin: 0,
-                            lineHeight: 1,
                             fontSize: `${emojiSize}px`
-                        }}>🙂</p>
+                        }}>{emoji}</p>
                     </div>
                 </div>
             </div>

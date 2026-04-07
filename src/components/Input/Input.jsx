@@ -2,7 +2,7 @@ import Style from "./Input.module.css"
 
 const Input = props => {
 
-    const { hint, value, changeCallback, type} = props
+    const { hint, value, changeCallback, type, max} = props
 
     return (
         <input
@@ -11,6 +11,7 @@ const Input = props => {
             value={value}
             onChange={changeCallback}
             type={type || "text"}
+            maxLength={max}
         />
     )
 }

@@ -8,11 +8,12 @@ import Preview from "../Preview/Preview"
 import ColorPicker from "../ColorPicker/ColorPicker";
 
 const Editor = () => {
-    const [filename, setFilename] = useState("")
+    const [filename, setFilename] = useState("placeholder")
     const [filetype, setFiletype] = useState("png")
-    const [width, setWidth] = useState("")
-    const [height, setHeight] = useState("")
+    const [width, setWidth] = useState("128")
+    const [height, setHeight] = useState("128")
     const [color, setColor] = useState("#009cfc")
+    const [emoji, setEmoji] = useState("❤️")
 
     const previewRef = useRef()
 
@@ -78,6 +79,9 @@ const Editor = () => {
                     <span> - </span>
                     <Input hint="height (defualt: 128px)" value={height} changeCallback={e => setHeight(e.target.value)} type="number" />
                 </div>
+                <div className={Style.inputsContainer}>
+                    <Input hint="Insert one emoji" value={emoji} changeCallback={e => setEmoji(e.target.value)} max="3" />
+                </div>
                 <Button title="Download" clickCallback={downloadImage} />
             </aside>
             <aside className={Style.preview}>
@@ -87,6 +91,7 @@ const Editor = () => {
                     color={color}
                     width={width}
                     height={height}
+                    emoji={emoji}
                 />
             </aside>
         </section>
