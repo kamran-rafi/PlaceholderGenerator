@@ -1,0 +1,15 @@
+#Footer {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+#Footer > a {
+    color: #009cfc;
+    font-weight: 800;
+}

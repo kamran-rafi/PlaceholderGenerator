@@ -18,14 +18,14 @@ const Editor = () => {
         <section id={Style.Editor}>
             <aside className={Style.inputs}>
                 <h2>Customize</h2>
-                <div className={Style.fileInfo}>
+                <div className={Style.inputsContainer}>
                     <Input hint="placeholder" value={filename} changeCallback={e => setFilename(e.target.value)} />
                     <DropMenu value={filetype} changeCallback={e => setFiletype(e.target.value)} />
                 </div>
                 <Button title="Download" clickCallback={downloadImage} />
             </aside>
             <aside className={Style.preview}>
-                Preview
+                <h2>Preview</h2>
             </aside>
         </section>
     )

@@ -1,6 +1,7 @@
 #Editor {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border-bottom: 4px solid black;
 }
 
 .inputs {
@@ -16,7 +17,12 @@
     font-size: 32px;
 }
 
-.fileInfo {
+.preview > h2 {
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.inputsContainer {
     display: flex;
     gap: 8px;
 }
