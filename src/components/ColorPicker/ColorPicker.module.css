@@ -1,0 +1,30 @@
+#ColorPicker {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.colors {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    height: 100%;
+}
+
+.button {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 8px;
+}
+
+.button:hover {
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
