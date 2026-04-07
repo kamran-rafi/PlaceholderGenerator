@@ -14,6 +14,7 @@ const Welcome = () => {
                     Generate bold, customizable placeholder images offline. Set size, colors, text, and vibe—then download instantly.
                 </p>
                 <Button title="Get Started!"/>
+                <Button title="But Why?"/>
             </main>
         </section>
     )

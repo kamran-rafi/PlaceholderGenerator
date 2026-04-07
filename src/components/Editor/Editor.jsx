@@ -14,6 +14,7 @@ const Editor = () => {
     const [height, setHeight] = useState("128")
     const [color, setColor] = useState("#009cfc")
     const [emoji, setEmoji] = useState("❤️")
+    const [showDimensions, setShowDimensions] = useState(true)
 
     const previewRef = useRef()
 
@@ -69,15 +70,28 @@ const Editor = () => {
         <section id={Style.Editor}>
             <aside className={Style.inputs}>
                 <h2>Customize</h2>
-                <div className={Style.inputsContainer}>
-                    <Input hint="placeholder" value={filename} changeCallback={e => setFilename(e.target.value)} />
-                    <DropMenu value={filetype} changeCallback={e => setFiletype(e.target.value)} />
+                <div>
+                    <p className={Style.text}>Name your file:</p>
+                    <div className={Style.inputsContainer}>
+                        <Input hint="placeholder" value={filename} changeCallback={e => setFilename(e.target.value)} />
+                        <DropMenu value={filetype} changeCallback={e => setFiletype(e.target.value)} />
+                    </div>
                 </div>
-                <ColorPicker value={color} changeCallback={e => setColor(e.target.value)} changeColor={setColor} />
-                <div className={Style.inputsContainer}>
-                    <Input hint="width (defualt: 128px)" value={width} changeCallback={e => setWidth(e.target.value)} type="number" />
-                    <span> - </span>
-                    <Input hint="height (defualt: 128px)" value={height} changeCallback={e => setHeight(e.target.value)} type="number" />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                    <p className={Style.text}>Choose a color:</p>
+                    <ColorPicker value={color} changeCallback={e => setColor(e.target.value)} changeColor={setColor} />
+                </div>
+                <div>
+                    <p className={Style.text}>Specify dimensions (width x heigth): </p>
+                    <div className={Style.inputsContainer}>
+                        <Input hint="width (defualt: 128px)" value={width} changeCallback={e => setWidth(e.target.value)} type="number" />
+                        <span> - </span>
+                        <Input hint="height (defualt: 128px)" value={height} changeCallback={e => setHeight(e.target.value)} type="number" />
+                    </div>
+                    <label className={Style.label}>
+                        <input type="checkbox" checked={showDimensions} onChange={()=>setShowDimensions(!showDimensions)}/>
+                        <p>Show dimensions on image.</p>
+                    </label>
                 </div>
                 <div className={Style.inputsContainer}>
                     <Input hint="Insert one emoji" value={emoji} changeCallback={e => setEmoji(e.target.value)} max="3" />
@@ -92,6 +106,7 @@ const Editor = () => {
                     width={width}
                     height={height}
                     emoji={emoji}
+                    showDimensions={showDimensions}
                 />
             </aside>
         </section>
