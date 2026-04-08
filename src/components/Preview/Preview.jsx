@@ -1,7 +1,7 @@
 import Style from "./Preview.module.css"
 
 const Preview = ({ reference, color, width = 128, height = 128, emoji, showDimensions }) => {
-    const maxPreviewSize = 320
+    const maxPreviewSize = 340
     const scale = Math.min(maxPreviewSize / width, maxPreviewSize / height)
 
     // Pick smaller of width or height for emoji size
@@ -62,7 +62,6 @@ const Preview = ({ reference, color, width = 128, height = 128, emoji, showDimen
                     alignItems: "center",
                     justifyContent: "center",
                     overflow: "hidden",
-                    backgroundColor:"yellow"
                 }}
             >
                 {/* Inner scaling layer */}

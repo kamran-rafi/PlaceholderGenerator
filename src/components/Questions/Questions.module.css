@@ -33,6 +33,7 @@
     font-weight: 800;
     font-size: 20px;
     background-color: #009cfc;
+    gap: 24px;
 }
 
 .answer {
@@ -54,5 +55,20 @@
 
     .answer {
         font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+
+    .question {
+        width: auto;
+    }
+
+    .header {
+        font-size: 13px;
+    }
+
+    .answer {
+        font-size: 12px;
     }
 }
