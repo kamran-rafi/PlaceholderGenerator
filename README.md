@@ -1,5 +1,7 @@
 # 🧱 Placeholder Image Generator
 
+[Link Visit Here](https://phimggen.kamran.app/)
+
 > Make Ugly Placeholders Beautifully Fast
 
 A design-consistent placeholder image generator built for developers.  
@@ -47,6 +49,8 @@ This tool fixes that.
 ---
 
 ## 🖼️ Preview
+
+<img width="1920" height="2225" alt="preview" src="https://github.com/user-attachments/assets/0336da70-6349-484f-be3e-946523b1aa85" />
 
 ---
 
